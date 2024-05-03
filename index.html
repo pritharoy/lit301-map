@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <title>LIT301 Winter 2023-24</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body { 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    #map { 
+      position: absolute; 
+      top: 0; 
+      bottom: 0; 
+      width: 100%; 
+    }
+  </style>
+</head>
+
+<body>
+  <div id='map'></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicHJpdGhhcm95IiwiYSI6ImNsdDJxZzc4ZTAwcm0ya3MzM3A5enM3cGQifQ.bQ6Jk2b2jGcnP2AGWv446w'; 
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/pritharoy/clv3amw3d00e101pha85h0gi8', 
+      center: [77.850, 13.828],
+      zoom: 2.10
+    });
+
+    const places = [
+  {
+    "type": "Feature",
+    "properties": {
+      "mapbox_id": "dXJuOm1ieHBsYzpJc2s",
+      "wikidata": "Q334",
+      "short_code": "sg",
+      "place_name": "Singapore",
+      "Location": "Singapore",
+      "Text Studied": "Singapore at Home: Life Across Lines. Edited by Pallavi Narayan and Iman F. Hameed. (2021)",
+      "Link to project": [
+        { author: "Bhumika Sisodia", link: "https://uploads.knightlab.com/storymapjs/5130bdf451245237818bf8c74c9f5b76/singapore-at-home-life-across-lines/draft.html" },
+        { author: "Krishi Shah", link: "https://uploads.knightlab.com/storymapjs/c10558b5788060bd89d9b70b09a9427e/singapore-lit301/index.html" },
+        { author: "Sangitha Viswanathan", link: "https://uploads.knightlab.com/storymapjs/8e526a6c3db518c5e1b65767b74bbd2b/singapore-tales/index.html" }
+      ]
+    },
+    "geometry": {
+      "coordinates": [
+        103.808052,
+        1.351616
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "mapbox_id": "dXJuOm1ieHBsYzpJc2s",
+      "wikidata": "Q8684",
+      "short_code": "sg",
+      "place_name": "Seoul, South Korea",
+      "Location": "Seoul",
+      "Text Studied": "Love in the Big City. Sang Young Park. (2019)",
+      "Link to project": [
+        { author: "Bhumika Sisodia", link: "https://uploads.knightlab.com/storymapjs/5130bdf451245237818bf8c74c9f5b76/love-in-a-big-city-seoul/draft.html" }
+      ]
+    },
+    "geometry": {
+      "coordinates": [
+        126.978291,
+        37.566679
+      ],
+      "type": "Point"
+    }
+  },
+  {
+  "type": "Feature",
+  "properties": {
+    "mapbox_id": "dXJuOm1ieHBsYzpCSWhy",
+    "wikidata": "Q1070",
+    "short_code": "ahmedabad",
+    "place_name": "Ahmedabad, Gujarat, India",
+    "Location": "Ahmedabad",
+    "Text Studied": "Ahmedabad: City with a Past. Esther David. (2016)",
+    "Link to project": [
+      { author: "Satya Oza", link: "https://uploads.knightlab.com/storymapjs/08058c29387f0fe9b0240204b0025327/ahmedabad-home-the-past-and-the-present/draft.html" },
+      { author: "Ali Ainan Naqvi", link: "https://uploads.knightlab.com/storymapjs/5e826b1b3478bb27b464e2154fd7f52a/ali-naqvi/index.html"}
+    ]
+  },
+  "geometry": {
+    "coordinates": [
+      72.579707,
+      23.021624
+    ],
+    "type": "Point"
+  }
+},
+
+{
+  "type": "Feature",
+  "properties": {
+    "mapbox_id": "dXJuOm1ieHBsYzpBZVlJL2c",
+    "wikidata": "Q34647",
+    "short_code": "johannesburg",
+    "place_name": "Johannesburg, Gauteng, South Africa",
+    "Location": "Johannesburg",
+    "Relevance": "",
+    "Text Studied": "Portrait with Keys. Ivan Vladislavic. (2007)",
+    "Link to project": [
+      { author: "Satya Oza", link: "https://uploads.knightlab.com/storymapjs/08058c29387f0fe9b0240204b0025327/haunted-johannesburg/index.html" },
+      { author: "Kanishka Bhootra", link: "https://uploads.knightlab.com/storymapjs/f439d728de92eb752a672fb784bd3c2e/johannesburg/index.html" }
+    ]
+  },
+  "geometry": {
+    "coordinates": [
+      28.049722,
+      -26.205
+    ],
+    "type": "Point"
+  }
+},
+{
+  "type": "Feature",
+  "properties": {
+    "mapbox_id": "dXJuOm1ieHBsYzpBU2kw",
+    "wikidata": "Q11739",
+    "short_code": "lahore",
+    "place_name": "Lahore, Punjab, Pakistan",
+    "Location": "Lahore",
+    "Text Studied": "The Diary of a Social Butterfly. Moni Mohsin. (2008)",
+    "Relevance": "Course Content",
+    "Link to project": [
+      { "author": "Krishi Shah", "link": "https://uploads.knightlab.com/storymapjs/c10558b5788060bd89d9b70b09a9427e/lit301/index.html" }
+    ]
+  },
+  "geometry": {
+    "coordinates": [
+      74.314183,
+      31.565682
+    ],
+    "type": "Point"
+  }
+},
+
+{
+  "type": "Feature",
+  "properties": {
+    "mapbox_id": "dXJuOm1ieHBsYzpCYWdE",
+    "wikidata": "Q612",
+    "short_code": "dubai",
+    "place_name": "Dubai, Dubai, United Arab Emirates",
+    "Location": "Dubai",
+    "Relevance": "",
+    "Text Studied": "The Temporary People. Deepak Unnikrishnan. (2017)",
+    "Link to project": [
+      { "author": "Kanishka Bhootra", "link": "https://uploads.knightlab.com/storymapjs/f439d728de92eb752a672fb784bd3c2e/dubai/index.html" }
+    ]
+  },
+  "geometry": {
+    "coordinates": [
+      55.292491,
+      25.265347
+    ],
+    "type": "Point"
+  }
+}
+
+
+
+
+];
+
+    places.forEach(place => {
+      // Create a marker for each place
+      const popupContent = `
+        <h3>${place.properties.place_name}</h3>
+        <p><b>Text Studied:</b> ${place.properties["Text Studied"]}</p>
+        ${place.properties["Link to project"].map(link => `
+          <p><a href="${link.link}" target="_blank">${link.author}'s project</a></p>
+        `).join('')}
+      `;
+      new mapboxgl.Marker()
+        .setLngLat(place.geometry.coordinates)
+        .setPopup(new mapboxgl.Popup().setHTML(popupContent))
+        .addTo(map);
+    });
+
+    map.on('click', (event) => {
+      const features = map.queryRenderedFeatures(event.point, {
+        layers: ['lit301-digital-mapping']
+      });
+      if (!features.length) {
+        return;
+      }
+      const feature = features[0];
+
+      // Create a popup for the clicked feature
+      const popupContent = `
+        <h3>${feature.properties.place_name}</h3>
+        <p><b>Text Studied:</b> ${feature.properties["Text Studied"]}</p>
+        ${feature.properties["Link to project"].map(link => `
+          <p><a href="${link.link}" target="_blank">${link.author}'s project</a></p>
+        `).join('')}
+      `;
+      const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(popupContent)
+        .addTo(map);
+    });
+  </script>
+</body>
+</html>
